@@ -1,0 +1,127 @@
+/* styles.css — M1 starter (meets rubric) */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+:root{
+  --bg: #f6f6fb;
+  --ink: #111;
+  --ink-2: #333;
+  --muted: #555;
+  --line: #e6e6ef;
+  --panel: #ffffff;
+  --soft: #fafafa;
+  --shadow: 0 6px 22px rgba(0,0,0,.07);
+}
+
+body{
+  font-family: Georgia, serif;     /* serif font w/ serif fallback */
+  background: var(--bg);           /* background color */
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img{ max-width: 100%; height: auto; display: block; border-radius: 8px; }
+
+/* ------ Page Frame ------ */
+header, main, footer{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem; /* spacing around page content */
+}
+
+main{
+  background: var(--panel);
+  margin-top: 1.25rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+h1{ font-size: 2rem; margin: 1rem 0 .5rem; line-height: 1.2; color: var(--ink-2); }
+h2{ font-size: 1.5rem; margin: 1rem 0 .25rem; line-height: 1.25; color: var(--ink-2); }
+h3{ font-size: 1.125rem; margin: 1rem 0 .25rem; line-height: 1.25; color: var(--ink-2); }
+
+p{ margin: .5rem 0 1rem; }
+ul, ol{ padding-left: 1.25rem; }
+
+figure{ margin: 1rem 0; }
+figcaption{ font-size: .9rem; color: var(--muted); margin-top: .4rem; }
+
+/* ------ Accessible Nav (present on all pages) ------ */
+nav{
+  background: #eee;
+  border-radius: 10px;
+  margin: .5rem 0 1rem;
+  padding: .6rem .8rem;
+  text-align: center;
+}
+nav a{
+  display: inline-block;
+  padding: .4rem .7rem;
+  margin: .15rem .25rem;
+  text-decoration: none;
+  color: var(--ink-2);
+  font-weight: 700;              /* styling change */
+  border: 1px solid #ddd;        /* styling change */
+  border-radius: 8px;
+}
+nav a:hover{ text-decoration: underline; }
+nav a:focus-visible{ outline: 3px solid #222; outline-offset: 2px; }
+
+/* ------ Cards ------ */
+.card{
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* ------ Responsive Gallery Grid (use on art.html) ------ */
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+.span-4{ grid-column: span 4; }
+.span-6{ grid-column: span 6; }
+.span-8{ grid-column: span 8; }
+.span-12{ grid-column: span 12; }
+
+/* ------ Unique two-column layout (use on one page like experience.html) ------ */
+.split{
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 1.25rem;
+}
+aside{ color: var(--ink); }
+
+/* ------ Links ------ */
+a{ color: #1133aa; }
+a:hover{ text-decoration: underline; }
+
+/* ------ Footer ------ */
+footer{
+  text-align: center;
+  padding: 1rem 0 2rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* ------ Small Screens ------ */
+@media (max-width: 900px){
+  .split{ grid-template-columns: 1fr; }
+}
+@media (max-width: 800px){
+  .gallery{ grid-template-columns: 1fr; }
+  .span-4, .span-6, .span-8, .span-12{ grid-column: auto; }
+}
+
+/* ------ Optional utilities ------ */
+.lede{ font-weight: 700; }            /* styling change */
+.smallcaps{ font-variant: small-caps; } /* styling change */
+.tight{ margin-top: .25rem; margin-bottom: .25rem; }
+.space-lg{ margin-top: 2rem; }
